@@ -1,0 +1,299 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial Black', Arial, sans-serif;
+            background: #4a6fa5;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Background text effect like the poster */
+        body::before {
+            content: '𝗝𝗘𝗘𝗧𝗣𝗥𝗘𝗗𝗜𝗖𝗧';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            font-size: 18vw;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+            pointer-events: none;
+            letter-spacing: -0.05em;
+            line-height: 0.8;
+            transform: rotate(-5deg);
+        }
+
+        .container {
+            background: #f5f3f0;
+            border-radius: 0;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+            border: 3px solid #4a6fa5;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .form-section {
+            margin-bottom: 25px;
+            border-bottom: 2px solid #4a6fa5;
+            padding-bottom: 15px;
+        }
+
+        .form-section:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        h2 {
+            background: #4a6fa5;
+            color: white;
+            margin: 0 -10px 15px -10px;
+            padding: 8px 15px;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: inline-block;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .area {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #4a6fa5;
+            border-radius: 0;
+            font-size: 18px;
+            font-weight: bold;
+            background: white;
+            color: #333;
+            text-align: center;
+        }
+
+        .area:focus {
+            outline: none;
+            background: #f8f8f8;
+            border-color: #333;
+        }
+
+        .switch-field {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+            justify-content: center;
+        }
+
+        .switch-field input[type="radio"] {
+            display: none;
+        }
+
+        .switch-field label {
+            background-color: white;
+            color: #333;
+            padding: 12px 20px;
+            border: 2px solid #4a6fa5;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+            min-width: 50px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .switch-field label:hover {
+            background-color: #f0f0f0;
+        }
+
+        .switch-field input[type="radio"]:checked + label {
+            background-color: #4a6fa5;
+            color: white;
+        }
+
+        .location {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #4a6fa5;
+            border-radius: 0;
+            font-size: 16px;
+            background-color: white;
+            cursor: pointer;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .location:focus {
+            outline: none;
+            background: #f8f8f8;
+            border-color: #333;
+        }
+
+        .submit {
+            width: 100%;
+            background: #333;
+            color: #f5f3f0;
+            padding: 20px;
+            border: none;
+            border-radius: 0;
+            font-size: 16px;
+            font-weight: 900;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 20px;
+        }
+
+        .submit:hover {
+            background: #4a6fa5;
+            transform: translateY(-1px);
+        }
+
+        .submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .result {
+            margin-top: 25px;
+            padding: 20px;
+            background: white;
+            border: 3px solid #4a6fa5;
+            text-align: center;
+            display: none;
+            font-weight: bold;
+        }
+
+        .result.success {
+            background: url("https://img.freepik.com/premium-photo/close-up-view-brand-new-indian-10-50-100-200-500-2000-rupees-banknotes-colorful-cash-money-pattern-background_380726-14.jpg?semt=ais_hybrid&w=740&q=80") no-repeat center center;
+            background-size: cover; /* Makes the image cover the whole area */
+            color: #333;
+            border-color: #333;}
+
+
+        .result.error {
+            background: #d32f2f;
+            color: white;
+            border-color: #333;
+        }
+
+        .result h2 {
+            background: transparent;
+            color: inherit;
+            margin: 0;
+            padding: 0;
+            font-size: 18px;
+            text-transform: none;
+            letter-spacing: normal;
+            white-space: pre-line;
+        }
+
+        .loading {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border: 3px solid #f5f3f0;
+            border-top: 3px solid #4a6fa5;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 8px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .server-status {
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 12px;
+            font-size: 13px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .server-online {
+            background: #4a6fa5;
+            color: white;
+            border: 2px solid #333;
+        }
+
+        .server-offline {
+            background: #d32f2f;
+            color: white;
+            border: 2px solid #333;
+        }
+
+        .rsvp-section {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid #4a6fa5;
+            font-size: 12px;
+            color: #666;
+            font-style: italic;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 600px) {
+            body::before {
+                font-size: 15vw;
+            }
+            
+            .container {
+                padding: 25px;
+                margin: 10px;
+            }
+            
+            h1 {
+                font-size: 18px;
+            }
+            
+            .switch-field {
+                gap: 5px;
+            }
+            
+            .switch-field label {
+                padding: 10px 15px;
+                font-size: 14px;
+            }
+        }
