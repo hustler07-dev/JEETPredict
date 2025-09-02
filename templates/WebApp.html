@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEETPREDICT</title>
+    <link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f3e0.svg" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="WebApp.js"></script>
+	<link rel="stylesheet" href="WebApp.css">
+</head>
+<body>
+    <div class="container">
+        <h1>JEETPREDICT [Home Price Prediction]</h1>
+        <p class="subtitle">Enter your property details below</p>
+        
+        <div id="serverStatus" class="server-status">
+            <span class="loading"></span> Connecting to server...
+        </div>
+
+        <form id="priceForm">
+            <div class="form-section">
+                <h2>Area</h2>
+                <div class="form-group">
+                    <input class="area" type="number" id="uiSqft" name="total_sqft" value="1000" min="100" max="10000" placeholder="Square Feet">
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>BHK</h2>
+                <div class="form-group">
+                    <div class="switch-field">
+                        <input type="radio" id="radio-bhk-1" name="uiBHK" value="1"/>
+                        <label for="radio-bhk-1">1</label>
+                        <input type="radio" id="radio-bhk-2" name="uiBHK" value="2" checked/>
+                        <label for="radio-bhk-2">2</label>
+                        <input type="radio" id="radio-bhk-3" name="uiBHK" value="3"/>
+                        <label for="radio-bhk-3">3</label>
+                        <input type="radio" id="radio-bhk-4" name="uiBHK" value="4"/>
+                        <label for="radio-bhk-4">4</label>
+                        <input type="radio" id="radio-bhk-5" name="uiBHK" value="5"/>
+                        <label for="radio-bhk-5">5</label>
+                        <input type="radio" id="radio-bhk-6" name="uiBHK" value="6"/>
+                        <label for="radio-bhk-6">6</label>
+                        <input type="radio" id="radio-bhk-7" name="uiBHK" value="7"/>
+                        <label for="radio-bhk-7">7</label>
+                        <input type="radio" id="radio-bhk-8" name="uiBHK" value="8"/>
+                        <label for="radio-bhk-8">8</label>
+                        <input type="radio" id="radio-bhk-9" name="uiBHK" value="9"/>
+                        <label for="radio-bhk-9">9</label>
+                        <input type="radio" id="radio-bhk-10" name="uiBHK" value="10"/>
+                        <label for="radio-bhk-10">10</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>Bathrooms</h2>
+                <div class="form-group">
+                    <div class="switch-field">
+                        <input type="radio" id="radio-bath-1" name="uiBathrooms" value="1"/>
+                        <label for="radio-bath-1">1</label>
+                        <input type="radio" id="radio-bath-2" name="uiBathrooms" value="2" checked/>
+                        <label for="radio-bath-2">2</label>
+                        <input type="radio" id="radio-bath-3" name="uiBathrooms" value="3"/>
+                        <label for="radio-bath-3">3</label>
+                        <input type="radio" id="radio-bath-4" name="uiBathrooms" value="4"/>
+                        <label for="radio-bath-4">4</label>
+                        <input type="radio" id="radio-bath-5" name="uiBathrooms" value="5"/>
+                        <label for="radio-bath-5">5</label>
+                        <input type="radio" id="radio-bath-6" name="uiBathrooms" value="6"/>
+                        <label for="radio-bath-6">6</label>
+                        <input type="radio" id="radio-bath-7" name="uiBathrooms" value="7"/>
+                        <label for="radio-bath-7">7</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>Location</h2>
+                <div class="form-group">
+                    <select class="location" id="uiLocations" name="location" required>
+                        <option value="" disabled selected>Loading locations...</option>
+                    </select>
+                </div>
+            </div>
+
+            <button class="submit" type="button" onclick="onClickedEstimatePrice()">
+                Estimate Price
+            </button>
+
+            <div id="uiEstimatedPrice" class="result">
+                <h2></h2>
+            </div>
+
+            <div class="rsvp-section">
+                Developed by Jeet Bhowmick
+            </div>
+        </form>
+    </div>
+</body>
+</html>
